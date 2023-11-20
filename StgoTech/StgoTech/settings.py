@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -105,11 +107,11 @@ WSGI_APPLICATION = 'StgoTech.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'inventario_stgotech', 
-        'USER': 'user_stgo',
-        'PASSWORD': 'yj4RtgzhMcqj$',
-        'HOST': 'localhost', 
-        'PORT': '5432',
+        'NAME': os.getenv('NAME_DB'), 
+        'USER': os.getenv('USER_DB'),
+        'PASSWORD': os.getenv('PASS_DB'),
+        'HOST': os.getenv('HOST_DB'), 
+        'PORT': os.getenv('PORT_DB'),
     }
 }
 
