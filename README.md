@@ -3,6 +3,14 @@
 # Runserver
 
 ```python
+python -m venv env
+```
+
+```python
+pip install -r requirements.txt
+```
+
+```python
 python manage.py runserver --settings=settings_local
 ```
 
